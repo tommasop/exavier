@@ -48,7 +48,7 @@ defmodule Exavier.Server do
               record_mutation(module, mutated_lines, original, mutated)
               Code.require_file(test_file)
               Exavier.unrequire_file(test_file)
-              ExUnit.Server.modules_loaded()
+              ExUnit.Server.modules_loaded(true)
               ExUnit.run()
           end
         end)

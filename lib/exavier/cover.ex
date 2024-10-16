@@ -9,7 +9,7 @@ defmodule Exavier.Cover do
 
     Code.require_file(test_file)
     Exavier.unrequire_file(test_file)
-    ExUnit.Server.modules_loaded()
+    ExUnit.Server.modules_loaded(true)
     ExUnit.run()
 
     {:result, coverage_results, _failures} = :cover.analyse(:coverage, :line)
